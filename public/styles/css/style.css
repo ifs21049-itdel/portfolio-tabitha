@@ -1,0 +1,728 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: #272829;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.9rem;
+}
+
+p,
+span,
+label,
+input,
+textarea,
+li {
+  color: #434242;
+}
+
+a {
+  text-decoration: none;
+  color: #272829;
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* Buttons */
+.btn {
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 2px solid #c6b497;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  letter-spacing: 5px;
+}
+
+/* titles */
+.section-title {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+}
+
+.pre-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #434242;
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pre-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: #d9d9d9;
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+}
+
+/* Layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /*use this first, use code below when its time for explaining responsive design part */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+/* --- Logo and Navigation Menu --- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.logo a {
+  color: #272829;
+}
+
+/* Navigation Menu */
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  color: #272829;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  z-index: fixed;
+  top: 33px;
+  right: 35px;
+}
+
+/* burger */
+.burger div {
+  display: none;
+  width: 25px;
+  height: 3px;
+  margin: 7px;
+  transition: all 0.3s;
+}
+/* .burger-list {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  z-index: fixed;
+  top: 33px;
+  right: 35px;
+} */
+
+.burger {
+  display: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* hero section */
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  /* animation-delay: 0.5s; */
+}
+
+/* .hero-left p {
+  animation-delay: 1s;
+} */
+
+/* multiple typing text animation */
+.static-text {
+  font-size: 25px;
+}
+
+.static-text .multiple-text {
+  color: #c49c5a;
+}
+
+.hero-right img {
+  width: 90%;
+  /* animation-delay: 1.5s; */
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* .anim {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: moveup 1s linear forwards;
+}
+
+@keyframes moveup {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} */
+
+/* Services Section */
+#services {
+  background-color: #fbfbfb;
+  padding: 6rem 0;
+}
+
+/* .services .pre-title {
+  margin: 0 auto;
+} */
+
+.services-title {
+  text-align: center;
+}
+
+.service {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.7rem;
+}
+
+.service h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background: #f5f3fe;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: #c6b497;
+}
+
+.service-icon {
+  background: #f5f3fe;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: #c6b497;
+}
+
+/* Portfolio Section */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*use this first, use code below when its time for explaining responsive design part */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+#portfolios {
+  padding: 6rem 0;
+}
+
+.portfolio {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border: 1px solid #fff;
+}
+
+.portfolio-cover {
+  height: auto;
+}
+
+.portfolio-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-info {
+  padding: 2rem 1.5rem;
+}
+
+.portfolio-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portfolio h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.portfolio-title a svg:hover {
+  fill: #c6b497;
+}
+
+.portfolio-title a svg {
+  transition: 0.2s ease-in-out;
+}
+
+/* Experiences */
+
+.grid-1 {
+  /* display: grid; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+  /* grid-template-columns: 1fr 1fr; use this first, use code below when its time for explaining responsive design part */
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));*/
+  /* gap: 3rem; */
+  /* width: 890px;
+  position: static;
+  margin-left: 15%; */
+  /* background-color: red; */
+}
+
+/* @media screen and (max-width: 768px) {
+  /* Mengatur lebar maksimum elemen-elemen pengalaman 
+  .experience {
+    width: 90%;
+  }
+} */
+
+#experience {
+  background-color: #fff;
+  padding: 6rem 0;
+  position: center;
+}
+
+.experience {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border: 1px solid #fbfbfb;
+  box-sizing: border-box;
+  width: 400px;
+}
+
+.experience-cover {
+  height: auto;
+}
+
+.experience-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.7rem;
+}
+
+.experience-info {
+  padding: 2rem 1.5rem;
+}
+
+.experience-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.experience h2 {
+  font-weight: 100;
+}
+.experience h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #5d12d2;
+  text-align: center;
+}
+
+.experience p {
+  color: #7d7c7c;
+}
+
+.btn-ex {
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+
+  display: inline-block;
+  background-color: #c49c5c;
+  padding: 10px 24px;
+  border-radius: 3rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 30px;
+}
+
+.btn-ex:hover {
+  background-color: #c6b497;
+}
+
+.popup {
+  display: flexbox;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 1000px;
+  background: #fff;
+  border-radius: 6px;
+  top: 0;
+  /* transform: translate(-50%, -50%) scale(0.1); */
+  text-align: center;
+  /* padding: 0 30px 30px;   */
+  color: #333;
+  /* visibility: hidden; */
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  /* top: 50%; */
+  /* margin-left: 50%; */
+  /* margin-right: 150%; */
+  width: 100%;
+  height: 100%;
+  /* transform: translate(-50%, -50%) scale(1); */
+}
+
+.tempat-popup {
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  height: 100vh;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  visibility: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.tempat-popup-visible {
+  visibility: visible;
+  /* transform: translate(-50%, -50%) scale(1); */
+}
+
+.popup img {
+  width: 350px;
+  margin-top: 2rem;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.popup h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 90%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 10px 0;
+  background: #c49c5c;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills */
+#skills {
+  padding: 6rem 0;
+  background: #fbfbfb;
+}
+
+.skill-name {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #272829;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.skill-bar {
+  height: 14px;
+  background: #cfd3ce;
+  border-radius: 3px;
+}
+
+.skill-per {
+  height: 14px;
+  background: #c6b497;
+  border-radius: 3px;
+  position: relative;
+  animation: fillBars 2.1s 1;
+}
+
+.skill-per::before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skill-per::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f1f1f1;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+/* Education */
+#educations {
+  padding: 6rem 0;
+  background: #fbfbfb;
+}
+
+.education {
+  display: flexbox;
+  gap: 2rem;
+}
+
+.education .line {
+  padding: 0 0.7rem;
+}
+
+.education .line div {
+  width: 2px;
+  height: 20%;
+  background: #c6b497;
+  position: absolute;
+}
+
+.education-info {
+  margin-left: 3rem;
+}
+
+.education-years {
+  margin-bottom: 3rem;
+}
+
+/* The dot on the line */
+.education .line div:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #c6b497;
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+}
+
+/* Contact */
+#contact {
+  padding: 6rem 0;
+}
+
+.contact-title {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+  text-indent: 20%;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*grid-template-columns: repeat(auto-fit, minmax(350, 1fr)); */
+  gap: 3rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  background: #fbfbfb;
+  border: 1px solid #f1f1f1;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea input::placeholder {
+  color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #7d7d7d;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+/* .input-control.success input {
+  border-color: #09c372;
+} */
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: #c6b497;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: #c49c5c;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+  background-color: #ede4d5;
+  width: 45px;
+  height: 45px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item-icon svg {
+  fill: #c49c5a;
+}
+
+.contact-item-detail h4 {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 0;
+  background: var(--secondaryBackgroundColor);
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icons a {
+  margin: 0 0.5rem;
+}
+
+.footer-icons svg {
+  fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+  fill: #000;
+}
+
+/* Burger */
+@media only screen and (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    width: 100%;
+    top: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul.hidden {
+    display: none;
+  }
+
+  .burger div {
+    /*display: none;*/
+    display: flex;
+    align-items: center;
+  }
+
+  .burger div:hover {
+    cursor: pointer;
+  }
+}
